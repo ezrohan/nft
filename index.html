@@ -38,15 +38,16 @@ body::before {
   content: '';
   position: absolute;
   top: 0;
-  left:-15px;
+  left: -15px;
   right: 0;
   bottom: 0;
   background-image: url('PSJ DEC 2023 LOGO.svg');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover; /* Ensures the image covers the full area */
-  filter: blur(10px);
+  background-size: cover;
+  filter: brightness(0) invert(1);
   z-index: -1;
+  opacity: 0.4; /* Adjusting the opacity */
 }
 
 h1 {
@@ -68,6 +69,7 @@ form {
 .row label {
   font-size: 13px;
   color: #8086a9;
+  font-family: 'myFont'; 
 }
 
 .row input {
@@ -86,6 +88,7 @@ form {
 
 .row input::placeholder {
   color: #C8CDDF;
+  font-family: 'myFont';
 }
 
 button {
@@ -97,7 +100,7 @@ button {
   border: none;
   border-radius: 100px;
   cursor: pointer;
-  font-family: 'Gianotten';
+  font-family: 'myFont';
   margin-top: 15px;
   transition: background 0.2s ease-out;
 }
@@ -113,7 +116,7 @@ button:hover {
   }
   
   form {
-   margin-top: 65%;
+   margin-top: 75%;
     border: none;
     box-shadow: none;
     padding: 20px 0;
@@ -131,7 +134,7 @@ button:hover {
             <input type="email" name="entry.326112838" autocomplete="off" placeholder="email@example.com" required>
         </div>
         <div class="row">
-            <label for="password">Wallet ID</label>
+            <label for="password" >Wallet ID</label>
             <input type="text" name="entry.752096047" required>
         </div>
         <button type="submit">Claim your NFT</button>

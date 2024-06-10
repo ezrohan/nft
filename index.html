@@ -2,35 +2,61 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Web Page</title>
     <style>
-    @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+  @font-face {
+    font-family: Gianotten;
+    src: url(GianottenLTPro-Regular.ttf);
+  }
+@font-face {
+  font-family: myFont;
+  src: url(26023618743.ttf);
+}
+
+
+html, body {
+  height: 100%;
+  min-height: 100vh; /* Ensures at least the full height of the viewport */
+  margin: 0;
+  padding: 0;
+}
 
 body {
-  font-family: 'Open Sans', sans-serif;
-  background: #f9faff;
+  font-family: 'myFont';
+  background: #d6d1c2;
   color: #3a3c47;
   line-height: 1.6;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0;
-  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left:-15px;
+  right: 0;
+  bottom: 0;
+  background-image: url('PSJ DEC 2023 LOGO.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; /* Ensures the image covers the full area */
+  filter: blur(10px);
+  z-index: -1;
 }
 
 h1 {
-  margin-top: 48px;
+  margin-top: 10%; 
 }
 
 form {
-  background: #fff;
   max-width: 360px;
   width: 100%;
   padding: 58px 44px;
-  border: 1px solid #e1e2f0;
-  border-radius: 4px;
-  box-shadow: 0 0 5px 0 rgba(42, 45, 48, 0.12);
-  transition: all 0.3s ease;
 }
 
 .row {
@@ -66,18 +92,18 @@ button {
   width: 100%;
   padding: 12px;
   font-size: 18px;
-  background-color: #ffcc00;
+  background-color: #d3bd9a;
   color: #fff;
   border: none;
   border-radius: 100px;
   cursor: pointer;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Gianotten';
   margin-top: 15px;
   transition: background 0.2s ease-out;
 }
 
 button:hover {
-    background-color: #ffeb3b;
+    background-color: #f2d09c;
 }
 
 @media(max-width: 458px) {
@@ -87,7 +113,7 @@ button:hover {
   }
   
   form {
-    background: #f9faff;
+   margin-top: 65%;
     border: none;
     box-shadow: none;
     padding: 20px 0;
@@ -98,7 +124,7 @@ button:hover {
 </head>
 <body>
    
-      <h1>Please enter you NFT details</h1>
+      <h1>Please enter your NFT details</h1>
       <form action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSeOzlpQSShW6NPRlALaAbWz3KyQJpfq72DvYr7krTk6uNgrLw/formResponse">
         <div class="row">
             <label for="email">Email</label>
@@ -108,7 +134,7 @@ button:hover {
             <label for="password">Wallet ID</label>
             <input type="text" name="entry.752096047" required>
         </div>
-        <button type="submit">Login</button>
+        <button type="submit">Claim your NFT</button>
       </form>
       <script>
         document.getElementById("loginForm").addEventListener("submit", function(e) {
